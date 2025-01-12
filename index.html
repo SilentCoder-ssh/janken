@@ -3,33 +3,128 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/src/output.css" rel="stylesheet">
+        <link href="/src/output.css" rel="stylesheet" />
         <title>Janken</title>
     </head>
     <body>
+        <div class="min-h-screen bg-slate-900 p-8 flex items-center justify-center">
+            <!-- Main container -->
+            <div
+                id="main-container"
+                class="mx-auto max-w-4xl border border-emerald-400/30 rounded-xl p-6 bg-slate-900/50 w-full">
+                <!-- Title -->
+                <h1 class="text-emerald-400 text-3xl font-bold text-center mb-6">ジャンケン | Janken</h1>
+                <!-- Display container -->
+                <div
+                    id="display-container"
+                    class="border border-emerald-400/30 rounded-xl p-6 bg-slate-800/30 relative">
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- Left side - Computer & User displays -->
+                        <div class="col-span-2">
+                            <!-- Game displays -->
+                            <div class="flex justify-center items-center gap-16 h-full">
+                                <!-- User display -->
+                                <div
+                                    class="bg-slate-800/50 rounded-lg p-6 flex items-center justify-center h-[200px] w-[200px]">
+                                    <div
+                                        id="user-choice"
+                                        class="text-emerald-400 text-xl text-center">
+                                        Your Choice
+                                    </div>
+                                </div>
+                                <!-- Computer display -->
+                                <div
+                                    id="computer-display"
+                                    class="bg-slate-800/50 rounded-lg p-6 flex items-center justify-center h-[200px] w-[200px]">
+                                    <div
+                                        id="computer-choice"
+                                        class="text-emerald-400 text-xl text-center">
+                                        Computer Choice
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="container">
-            <div class="display-container">
-                <div class="display-computer"></div>
-                <div class="display-user"></div>
-                <div class="display-result"></div>
-                <div class="display-score">
-                    <div class="display-score-computer"></div>
-                    <div class="display-score-user"></div>
+                        <!-- Right side - Result & Score -->
+                        <div class="col-span-1 space-y-4">
+                            <!-- Result display -->
+                            <div
+                                id="result-container"
+                                class="bg-slate-900/70 rounded-lg p-4 flex items-center justify-center min-h-[60px] border border-emerald-400/30">
+                                <div
+                                    id="winner-display"
+                                    class="text-emerald-400 text-xl font-semibold">
+                                    Winner Display
+                                </div>
+                            </div>
+                            <!-- Score container -->
+                            <div
+                                id="score-container"
+                                class="bg-slate-900/70 rounded-lg p-4">
+                                <div class="space-y-4">
+                                    <div
+                                        id="score-display"
+                                        class="text-emerald-400 text-lg font-semibold mb-4">
+                                        Score
+                                    </div>
+                                    <div
+                                        id="computer-score"
+                                        class="text-emerald-400">
+                                        Computer:
+                                        <span class="text-white">0</span>
+                                    </div>
+                                    <div
+                                        id="user-score"
+                                        class="text-emerald-400">
+                                        User: <span class="text-white">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="btn-container">
-                <div class="rock">
-                    <button class="btn-rock">グー</button>
-                    <img src="./src/img/icon/rock.png" alt="rock" />
-                </div>
-                <div class="scissors">
-                    <button class="btn-scissors">チョキ</button>
-                    <img src="./src/img/icon/scissors.png" alt="scissors" />
-                </div>
-                <div class="paper">
-                    <button class="btn-paper">パー</button>
-                    <img src="./src/img/icon/paper.png" alt="paper" />
+                <!-- Button container -->
+                <div
+                    id="button-container"
+                    class="mt-6 border border-emerald-400/30 rounded-xl p-6 bg-slate-800/30">
+                    <div class="grid grid-cols-3 gap-8">
+                        <!-- Rock button -->
+                        <div class="space-y-2">
+                            <button
+                                id="rock-button"
+                                class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                <img
+                                    src="./src/img/icon/rock.png"
+                                    alt="Rock"
+                                    class="w-6 h-6" />
+                                <span>グー (Rock)</span>
+                            </button>
+                        </div>
+                        <!-- Scissors button -->
+                        <div class="space-y-2">
+                            <button
+                                id="scissors-button"
+                                class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                <img
+                                    src="./src/img/icon/scissors.png"
+                                    alt="Scissors"
+                                    class="w-6 h-6" />
+                                <span>チョキ (Scissors)</span>
+                            </button>
+                        </div>
+                        <!-- Paper button -->
+                        <div class="space-y-2">
+                            <button
+                                id="paper-button"
+                                class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                <img
+                                    src="./src/img/icon/paper.png"
+                                    alt="Paper"
+                                    class="w-6 h-6" />
+                                <span>パー (Paper)</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
