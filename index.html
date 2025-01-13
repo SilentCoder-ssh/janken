@@ -3,26 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/src/output.css" rel="stylesheet" />
+        <link href="/src/styles/output.css" rel="stylesheet" />
         <title>Janken</title>
     </head>
     <body>
-        <div class="min-h-screen bg-slate-900 p-8 flex items-center justify-center">
+        <div
+            class="min-h-screen bg-slate-900 p-8 flex items-center justify-center">
             <!-- Main container -->
             <div
                 id="main-container"
                 class="mx-auto max-w-4xl border border-emerald-400/30 rounded-xl p-6 bg-slate-900/50 w-full">
                 <!-- Title -->
-                <h1 class="text-emerald-400 text-3xl font-bold text-center mb-6">ジャンケン | Janken</h1>
+                <h1
+                    class="text-emerald-400 text-3xl font-bold text-center mb-6">
+                    ジャンケン | Janken
+                </h1>
                 <!-- Display container -->
-                <div
-                    id="display-container"
-                    class="border border-emerald-400/30 rounded-xl p-6 bg-slate-800/30 relative">
+                <div id="display-container" class="rounded-xl p-6 relative">
                     <div class="grid grid-cols-3 gap-4">
                         <!-- Left side - Computer & User displays -->
                         <div class="col-span-2">
                             <!-- Game displays -->
-                            <div class="flex justify-center items-center gap-16 h-full">
+                            <div
+                                class="flex justify-center items-center gap-16 h-full">
                                 <!-- User display -->
                                 <div
                                     class="bg-slate-800/50 rounded-lg p-6 flex items-center justify-center h-[200px] w-[200px]">
@@ -54,7 +57,7 @@
                                 <div
                                     id="winner-display"
                                     class="text-emerald-400 text-xl font-semibold">
-                                    Winner Display
+                                    Winner is ...
                                 </div>
                             </div>
                             <!-- Score container -->
@@ -65,18 +68,18 @@
                                     <div
                                         id="score-display"
                                         class="text-emerald-400 text-lg font-semibold mb-4">
-                                        Score
+                                        Score (Objectif: 5)
                                     </div>
                                     <div
                                         id="computer-score"
                                         class="text-emerald-400">
                                         Computer:
-                                        <span class="text-white">0</span>
+                                        <span id="computer-score-number" class="text-white">0</span>
                                     </div>
                                     <div
                                         id="user-score"
                                         class="text-emerald-400">
-                                        User: <span class="text-white">0</span>
+                                        User: <span id="user-score-number" class="text-white">0</span>
                                     </div>
                                 </div>
                             </div>
@@ -84,9 +87,7 @@
                     </div>
                 </div>
                 <!-- Button container -->
-                <div
-                    id="button-container"
-                    class="mt-6 border border-emerald-400/30 rounded-xl p-6 bg-slate-800/30">
+                <div id="button-container" class="mt-6 rounded-xl p-6">
                     <div class="grid grid-cols-3 gap-8">
                         <!-- Rock button -->
                         <div class="space-y-2">
