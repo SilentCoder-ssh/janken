@@ -1,51 +1,44 @@
-import { player, computer } from "./players";
+import { resetGameData, resetPlayerData } from "./players";
+import type { Choices } from "../shared/types/choices";
+let playerManagement = { ...resetPlayerData };
+let gameManagement = { ...resetGameData };
 
-/**
- *  Déterminer le gagnant du round
- */
+function reset(): void {
+  playerManagement = resetPlayerData;
+  gameManagement = resetGameData;
+}
 
-function determineWinner(): void {
-  if (player.choice === computer.choice) {
-    player.draw = true;
-    computer.draw = true;
+function determineWinner(choicePlayer: Choices, choiceComputer: Choices): void {
+  if (choicePlayer === choiceComputer) {
+    gameManagement.draw = true;
   } else if (
-    (player.choice === "rock" && computer.choice === "scissors") ||
-    (player.choice === "scissors" && computer.choice === "paper") ||
-    (player.choice === "paper" && computer.choice === "rock")
+    (choicePlayer === "rock" && choiceComputer === "scissors") ||
+    (choicePlayer === "scissors" && choiceComputer === "paper") ||
+    (choicePlayer === "paper" && choiceComputer === "rock")
   ) {
-    player.win = true;
-    computer.lose = true;
-    player.score++;
+    gameManagement.draw = false;
+    playerManagement.player.win = true;
+    playerManagement.computer.lose = true;
+    gameManagement.player.score++;
   } else {
-    player.lose = true;
-    computer.win = true;
-    computer.score++;
+    gameManagement.draw = false;
+    playerManagement.player.lose = true;
+    playerManagement.computer.win = true;
+    gameManagement.computer.score++;
   }
+  console.log(gameManagement);
 }
-
-/**
- *  Réinitialiser des états après chaque round
- */
-
-function resetRound(): void {
-  player.choice = "";
-  computer.choice = "";
-  player.win = false;
-  player.lose = false;
-  player.draw = false;
-  computer.win = false;
-  computer.lose = false;
-  computer.draw = false;
-}
-
-/**
- *  Vérifier si un joueur a gagné
- */
 
 function checkGameWinner(): string | null {
-  if (player.score === 5) return "Player is the winner !";
-  if (computer.score === 5) return "Computer is the winner !";
+  if (gameManagement.player.score === 5) {
+    reset();
+    return "Player is the winner !";
+  }
+  if (gameManagement.computer.score === 5) {
+    reset();
+    return "Computer is the winner !";
+  }
   return null;
 }
 
-export { determineWinner, resetRound, checkGameWinner };
+export { determineWinner, checkGameWinner };
