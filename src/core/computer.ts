@@ -1,9 +1,8 @@
-/**
- *  Choix aléatoire du Computer
- */
 import { randomElement } from "../shared/utils/random";
-const choices = ["rock", "paper", "scissors"];
+import type { Choices } from "../shared/types/choices";
 
-const getComputerChoice = (): string => randomElement(choices);
+const choices: Choices[] = ["rock", "paper", "scissors"];
+
+const getComputerChoice = (): Choices => randomElement(choices);
 
 export { getComputerChoice, choices };

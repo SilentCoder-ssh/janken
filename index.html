@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/src/styles/output.css" rel="stylesheet" />
+        <link href="/src/assets/styles/output.css" rel="stylesheet" />
+        <script type="module" src="/src/main.ts"></script>
         <title>Janken</title>
     </head>
     <body>
@@ -92,10 +93,11 @@
                         <!-- Rock button -->
                         <div class="space-y-2">
                             <button
+                                data-choices="rock"
                                 id="rock-button"
                                 class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
-                                <img
-                                    src="./src/img/icon/rock.png"
+                                <image
+                                    src="./src/assets/images/choices/rock.png"
                                     alt="Rock"
                                     class="w-6 h-6" />
                                 <span>グー (Rock)</span>
@@ -104,10 +106,11 @@
                         <!-- Scissors button -->
                         <div class="space-y-2">
                             <button
+                                data-choices="scissors"
                                 id="scissors-button"
                                 class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
-                                <img
-                                    src="./src/img/icon/scissors.png"
+                                <image
+                                    src="./src/assets/images/choices/scissors.png"
                                     alt="Scissors"
                                     class="w-6 h-6" />
                                 <span>チョキ (Scissors)</span>
@@ -116,10 +119,11 @@
                         <!-- Paper button -->
                         <div class="space-y-2">
                             <button
+                                data-choices="paper"
                                 id="paper-button"
                                 class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
-                                <img
-                                    src="./src/img/icon/paper.png"
+                                <image
+                                    src="./src/assets/images/choices/paper.png"
                                     alt="Paper"
                                     class="w-6 h-6" />
                                 <span>パー (Paper)</span>
