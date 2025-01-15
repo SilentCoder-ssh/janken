@@ -5,7 +5,7 @@ import { selectors } from "../shared/utils/selectors";
 let playerManagement = resetPlayerData();
 let gameManagement = resetGameData();
 
-function reset(): void {
+function resetData(): void {
     playerManagement = resetPlayerData();
     gameManagement = resetGameData();
     // console.log({ playerManagement, gameManagement });
@@ -53,8 +53,8 @@ function checkGameWinner(): void {
         gameManagement.player.score === 5 ||
         gameManagement.computer.score === 5
     ) {
-        (selectors.winnerName as HTMLElement).textContent = `${winner} is the winner !`;
-        reset();
+        (selectors.winnerName as HTMLElement).textContent = `${winner} is the winner!`;
+        resetData();
     }
 }
 
