@@ -8,11 +8,11 @@ let gameManagement = resetGameData();
 function reset(): void {
     playerManagement = resetPlayerData();
     gameManagement = resetGameData();
-    console.log({ playerManagement, gameManagement });
-    console.log(playerManagement, "PLAYER MANAGEMENT");
-    console.log(gameManagement, "GAME MANAGEMENT");
-    console.log(resetPlayerData(), "RESET PLAYER DATA");
-    console.log(resetGameData(), "RESET GAME DATA");
+    // console.log({ playerManagement, gameManagement });
+    // console.log(playerManagement, "PLAYER MANAGEMENT");
+    // console.log(gameManagement, "GAME MANAGEMENT");
+    // console.log(resetPlayerData(), "RESET PLAYER DATA");
+    // console.log(resetGameData(), "RESET GAME DATA");
 }
 
 function determineWinner(choicePlayer: Choices, choiceComputer: Choices): void {
@@ -53,8 +53,8 @@ function checkGameWinner(): void {
         gameManagement.player.score === 5 ||
         gameManagement.computer.score === 5
     ) {
+        (selectors.winnerName as HTMLElement).textContent = `${winner} is the winner !`;
         reset();
-        alert(`${winner} is the winner !`);
     }
 }
 

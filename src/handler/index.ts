@@ -2,6 +2,7 @@ import { getComputerChoice } from "../core/computer";
 import { updateScore } from "../core/rounds";
 import type { Choices } from "../shared/types/choices";
 import { selectors } from "../shared/utils/selectors";
+import { checkGameWinner } from "../core/rounds";
 
 export default function initializeGameEvents() {
     const buttons = document.querySelectorAll("button");
@@ -11,6 +12,15 @@ export default function initializeGameEvents() {
     if (buttons) {
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener("click", (_) => {
+                 if (selectors.winnerName?.textContent) {
+                     (selectors.userScoreNumber as HTMLElement).textContent =
+                         "0";
+                     (
+                         selectors.computerScoreNumber as HTMLElement
+                     ).textContent = "0";
+                     selectors.winnerName.textContent = "";
+                 }  
+                 
                 const dataSetValue = buttons[i].getAttribute(
                     "data-choices"
                 ) as Choices;
@@ -28,7 +38,7 @@ export default function initializeGameEvents() {
                 selectors.computerChoice?.appendChild(imgDivComputer);
                 console.log({ dataSetValue });
 
-                updateScore(dataSetValue, computerChoice);
+                updateScore(dataSetValue, computerChoice);                        
             });
         }
     }
