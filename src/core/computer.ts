@@ -5,4 +5,6 @@ const choices: Choices[] = ["rock", "paper", "scissors"];
 
 const getComputerChoice = (): Choices => randomElement(choices);
 
+
+
 export { getComputerChoice, choices };
